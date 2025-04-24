@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-aks
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-aks
+  template:
+    metadata:
+      labels:
+        app: hello-aks
+    spec:
+      containers:
+      - name: hello-aks
+        image: <IMAGE_PLACEHOLDER>
+        ports:
+        - containerPort: 80
